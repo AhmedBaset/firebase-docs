@@ -14,19 +14,22 @@ Firebase docs: Super Simple Firebase documentation, includes Firestore docs, ...
     - #### collection(db, "users", queiry)
 
   - ### Queries:
-    - #### query(colRef, where?)
+    - #### query(colRef, ...where?, orderBy?, limit?)
+    - #### orderBy(..."key")
+    - #### limit(length)
+    - #### startAt(value), startAfter(value), endAt(value), endBefore(value)
     - #### where("key", oparator, "value")
-    - #### operations:
-      - `"=="` ==> `where("country", "==", "EGYPT")`
-      - `"!="` ==> `where("country", "!=", "USA")`
-      - `">"` ==> `where("age", ">", "18")`
-      - `"<"` ==> `where("age", "<", "18")`
-      - `"<="` ==> `where("age", "<=", "18")`
-      - `">="` ==> `where("age", ">=", "18")`
-      - `"in"` ==> `where("country", "in", ["USA", "EGYPT"])`
-      - `"not-in"` ==> `where("country", "not-in", ["CHINA", "JAPAN"])`
-      - `"array-contains"` ==> `where("hobbies", "array-contains", ["running", "conding", "swimming"])`
-      - `"array-contains-any"` ==> `where("hobbies", "array-contains-any", ["running", "conding", "swimming"])`
+      ##### operations:
+        - `"=="` ==> `where("country", "==", "EGYPT")`
+        - `"!="` ==> `where("country", "!=", "USA")`
+        - `">"` ==> `where("age", ">", "18")`
+        - `"<"` ==> `where("age", "<", "18")`
+        - `"<="` ==> `where("age", "<=", "18")`
+        - `">="` ==> `where("age", ">=", "18")`
+        - `"in"` ==> `where("country", "in", ["USA", "EGYPT"])`
+        - `"not-in"` ==> `where("country", "not-in", ["CHINA", "JAPAN"])`
+        - `"array-contains"` ==> `where("hobbies", "array-contains", ["running", "conding", "swimming"])`
+        - `"array-contains-any"` ==> `where("hobbies", "array-contains-any", ["running", "conding", "swimming"])`
 
 
 ## Get Realtime Data:
@@ -40,3 +43,8 @@ const unSubscribe = onSnapshot( colRef | query | docRef,
 // Stop listing: 
 unsubscribe()
 ```
+
+## Offline Mode:
+  - `enableIndexedDbPersistence(db);`
+  - `enableNetwork(db);`
+  - `disableNetwork(db);`
