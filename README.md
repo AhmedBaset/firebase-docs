@@ -17,16 +17,16 @@ Firebase docs: Super Simple Firebase documentation, includes Firestore docs, ...
     - #### query(colRef, where?)
     - #### where("key", oparator, "value")
     - #### operations:
-      - `"=="`
-      - `"!="`
-      - `">"`
-      - `"<"`
-      - `"<="`
-      - `">="`
-      - `"in"`
-      - `"not-in"`
-      - `"array-containsa"`
-      - `"array-contains-any"`
+      - `"=="` ==> `where("country", "==", "EGYPT")`
+      - `"!="` ==> `where("country", "!=", "USA")`
+      - `">"` ==> `where("age", ">", "18")`
+      - `"<"` ==> `where("age", "<", "18")`
+      - `"<="` ==> `where("age", "<=", "18")`
+      - `">="` ==> `where("age", ">=", "18")`
+      - `"in"` ==> `where("country", "in", ["USA", "EGYPT"])`
+      - `"not-in"` ==> `where("country", "not-in", ["CHINA", "JAPAN"])`
+      - `"array-contains"` ==> `where("hobbies", "array-contains", ["running", "conding", "swimming"])`
+      - `"array-contains-any"` ==> `where("hobbies", "array-contains-any", ["running", "conding", "swimming"])`
 
 
 ## Get Realtime Data:
