@@ -17,16 +17,16 @@ Firebase docs: Super Simple Firebase documentation, includes Firestore docs, ...
     - #### query(colRef, where?)
     - #### where("key", oparator, "value")
     - #### operations:
-      - `==`
-      - `!=`
-      - `>`
-      - `<`
-      - `<=`
-      - `>=`
-      - `in`
-      - `not-in`
-      - `array-containsa`
-      - `array-contains-any`
+      - `"=="`
+      - `"!="`
+      - `">"`
+      - `"<"`
+      - `"<="`
+      - `">="`
+      - `"in"`
+      - `"not-in"`
+      - `"array-containsa"`
+      - `"array-contains-any"`
 
 
 ## Get Realtime Data:
