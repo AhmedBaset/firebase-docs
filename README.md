@@ -31,9 +31,12 @@ Firebase docs: Super Simple Firebase documentation, includes Firestore docs, ...
 
 ## Get Realtime Data:
 ```
-onSnapshot( colRef | query | docRef,
+const unSubscribe = onSnapshot( colRef | query | docRef,
   (snapshot) => {// ON TRUE},
   (error) => { // ON ERROR},
   (complete) => { // ON COMPLETE }
 );
+
+// Stop listing: 
+unsubscribe()
 ```
