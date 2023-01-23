@@ -6,6 +6,12 @@ Firebase is a platform developed by Google for creating mobile and web applicati
 Firebase provides Authentication, Realtime Database, Cloud Firestore, Storage, Hosting, Functions, Machine Learning Kit, Crashlytics, Test Lab, Performance Monitoring, Remote Config, and Dynamic Links services.
 
 ## Table of Contents:
+
+### Authentication:
+- [Setup](#setup)
+- [Sign Up, In and Out](#sign-up-in-and-out)
+- [More Auth Functions](#more-auth-functions)
+
 ### Firestore:
 - [Setup](#setup)
 - [Write Data](#write-data)
@@ -14,6 +20,84 @@ Firebase provides Authentication, Realtime Database, Cloud Firestore, Storage, H
 - [Offline Mode](#offline-mode)
 - [Security and Vailidation](#security-and-vailidation)
 
+# Authentication:
+
+Authentication is a process of verifying the identity of a user. Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app.
+
+<details>
+<summary>Setup</summary>
+
+## Install Firebase:
+
+`npm install firebase`
+
+## initialize app:
+
+```js
+import { initializeApp } from "firebase/app";
+const app = initializeApp({...firebaseAppConfig});
+```
+
+## initialize auth:
+
+```js
+import { getAuth } from "firebase/auth";
+const auth = getAuth(app);
+```
+
+</details>
+
+<details>
+<summary>Sign Up, In and Out</summary>
+
+## Sign Up, In and Out:
+
+| Function | Syntax |
+| -------- | ------ |
+| Sign Up with Email    | `createUserWithEmailAndPassword(auth, email, password)` |
+| Sign In with Email    | `signInWithEmailAndPassword(auth, email, password)` |
+| Sign In and Sign Up with Provider | `signInWithPopup(auth, provider)`, `signInWithRedirect(auth, provider)` like next |
+| Google   | `signInWithPopup(auth, new GoogleAuthProvider())` |
+| Facebook | `signInWithPopup(auth, new FacebookAuthProvider())` |
+| Twitter  | `signInWithPopup(auth, new TwitterAuthProvider())` |
+| Github   | `signInWithPopup(auth, new GithubAuthProvider())` |
+| Apple | `signInWithPopup(auth, new OAuthProvider("apple.com"))` |
+| Phone    | `signInWithPhoneNumber(auth, phoneNumber, appVerifier)` |
+| Anonymous| `signInAnonymously(auth)` |
+| Custom   | `signInWithCustomToken(auth, token)` |
+| More     | [Firebase Docs](https://firebase.google.com/docs/auth/web/start) |
+| Sign Out | `signOut(auth)` |
+
+</details>
+
+<details>
+<summary>More Auth Functions</summary>
+
+## More Auth Functions:
+
+| Function | Syntax |
+| -------- | ------ |
+| On Auth State Changed | `onAuthStateChanged(auth, (user) => {})` |
+| Get Current User | `auth.currentUser` |
+| `auth.currentUser` | `{uid, displayName, email, emailVerified, phoneNumber, photoURL, isAnonymous, tenantId, providerData, metadata, ...}` |
+| Update Profile | `updateProfile(auth.currentUser, {displayName: "new name"})` |
+| Delete User | `deleteUser(auth.currentUser)` |
+| Send Email Verification | `sendEmailVerification(auth.currentUser)` |
+| Send Password Reset Email | `sendPasswordResetEmail(auth, email)` |
+| Change Email | `updateEmail(auth.currentUser, newEmail)` |
+| Change Password | `updatePassword(auth.currentUser, newPassword)` |
+| Link with Email | `linkWithCredential(auth.currentUser, EmailAuthProvider.credential(email, password))` |
+| Link with Provider | `linkWithPopup(auth.currentUser, provider)` |
+| Unlink Provider | `unlink(auth.currentUser, providerId)` |
+| Reauthenticate | `reauthenticateWithCredential(auth.currentUser, EmailAuthProvider.credential(email, password))` |
+| Reauthenticate with Provider | `reauthenticateWithPopup(auth.currentUser, provider)` |
+| More | [Firebase Docs](https://firebase.google.com/docs/auth/web/manage-users) |
+
+</details>
+
+<br />
+<hr />
+<br />
 
 # Firestore:
 Firestore is a NoSQL database that stores data in documents and collections. It is a real-time database that allows you to store and sync data between users in real-time.
@@ -193,3 +277,4 @@ For free, you can use 1GB of storage and 50,000 reads and writes per day. For mo
 Paid plans start at $0.18 per GB per month, and you only pay for what you use. You can also add a lot of other features, such as authentication, hosting, and more.
 
 </details>
+
