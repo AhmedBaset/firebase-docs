@@ -7,6 +7,7 @@ Firebase provides Authentication, Realtime Database, Cloud Firestore, Storage, H
 
 <details>
 <summary>Note</summary>
+
 # Notes:
 
 This is not an official documentation, it's just a simple documentation for beginners. You can find the official documentation [here](https://firebase.google.com/docs).
@@ -25,6 +26,14 @@ I am not a native English speaker, so if you find any mistakes, please feel free
 
 ## Table of Contents:
 
+**NOTE:** This links will not work while sections below are collapsed.
+
+### Get started:
+- [Create a Firebase project](#create-a-firebase-project)
+- [Install Firebase](#install-firebase)
+- [Initialize Firebase](#initialize-firebase)
+
+
 ### Authentication:
 
 -  [Setup](#setup)
@@ -40,30 +49,121 @@ I am not a native English speaker, so if you find any mistakes, please feel free
 -  [Offline Mode](#offline-mode)
 -  [Security and Vailidation](#security-and-vailidation)
 
+# Get started:
+
+  <details>
+  <summary>Create a Firebase project</summary>
+
+## Create a Firebase project:
+
+-  Go to [Firebase Console](https://console.firebase.google.com/).
+-  Login with your Google account.
+-  Click on `Add Project`.
+-  Enter a name for your project.
+-  Click on `Continue`.
+-  It will ask you to enable Google Analytics for your project, you can enable it or disable it. then press continue.
+-  Click on `Create Project`.
+-  It will take a few seconds to create your project.
+-  After creating your project, you will be redirected to the project dashboard.
+-  Now, You have to start an app. From the dashboard, choose `Web` from the `Add Firebase to your web app` section. Choose a name for your app, then click on `Register App`.
+-  Copy the config object. You will need it later.
+
+### The config object looks like this:
+
+```js
+const firebaseConfig = {
+	apiKey: "###############",
+	authDomain: "###############",
+	projectId: "###############",
+	storageBucket: "###############",
+	messagingSenderId: "###############",
+	appId: "###############",
+};
+```
+
+</details>
+
+  <details>
+  <summary>Install Firebase</summary>
+
+## Install Firebase:
+
+### NPM:
+
+```bash
+npm install firebase
+```
+
+    <details>
+    <summary>Yarn and script tag</summary>
+
+    ### Yarn:
+    ```bash
+    yarn add firebase
+    ```
+
+    ### Script tag:
+    ```html
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js"></script>
+    ...
+    ```
+    </details>
+
+  </details>
+
+  <details>
+  <summary>Initialize Firebase</summary>
+
+## Initialize Firebase app:
+
+```js
+import { initializeApp } from "firebase/app";
+const app = initializeApp(firebaseConfig);
+```
+
+As you see we imported `initializeApp` from `firebase/app` and we called it with `firebaseConfig` as an argument. This will initialize our app. The `firebase` package has also `firebase/auth`, `firebase/firestore`, `firebase/storage`, `firebase/functions`, and more. You can import functions from them like this:
+
+```js
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+// ...
+
+const auth = getAuth(app);
+const db = getFirestore(app);
+const storage = getStorage(app);
+// ...
+```
+
+  </details>
+
+<br /><hr /><br />
+
 # Authentication:
 
 Authentication is a process of verifying the identity of a user. Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app.
 
   <details>
-  <summary>Setup</summary>
+    <summary>Setup</summary>
 
-## Install Firebase:
+    ## Install Firebase:
 
-`npm install firebase`
+    `npm install firebase`
 
-## initialize app:
+    ## initialize app:
 
-```js
-import { initializeApp } from "firebase/app";
-const app = initializeApp({ ...firebaseAppConfig });
-```
+    ```js
+    import { initializeApp } from "firebase/app";
+    const app = initializeApp({ ...firebaseAppConfig });
+    ```
 
-## initialize auth:
+    ## initialize auth:
 
-```js
-import { getAuth } from "firebase/auth";
-const auth = getAuth(app);
-```
+    ```js
+    import { getAuth } from "firebase/auth";
+    const auth = getAuth(app);
+    ```
 
   </details>
 
@@ -298,3 +398,12 @@ For free, you can use 1GB of storage and 50,000 reads and writes per day. For mo
 Paid plans start at $0.18 per GB per month, and you only pay for what you use. You can also add a lot of other features, such as authentication, hosting, and more.
 
 </details>
+
+
+# Markdown functaionality to collapse and expand all sections
+
+<script src=script.js></script>
+
+<button onclick="collapseAll()">Collapse All</button>
+<button onclick="document.querySelectorAll('details').forEach(el => el.open = true)}">Collapse All</button>
+
