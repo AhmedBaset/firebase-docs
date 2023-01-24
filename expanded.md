@@ -9,7 +9,7 @@ These docs target the Firebase JavaScript SDK, but you can use the same concepts
 
 It target Firebase v9.
 
-<details>
+<details open>
 <summary>Notes</summary>
 
 # Notes:
@@ -101,7 +101,7 @@ I am not a native English speaker, so if you find any mistakes, please feel free
 
 # Get started:
 
-  <details>
+  <details open>
   <summary>Create a Firebase project</summary>
 
 ## Create a Firebase project:
@@ -133,7 +133,7 @@ const firebaseConfig = {
 
 </details>
 
-  <details>
+  <details open>
   <summary>Install Firebase</summary>
 
 ## Install Firebase:
@@ -144,7 +144,7 @@ const firebaseConfig = {
 npm install firebase
 ```
 
-    <details>
+    <details open>
     <summary>Yarn and script tag</summary>
 
     ### Yarn:
@@ -162,7 +162,7 @@ npm install firebase
 
   </details>
 
-  <details>
+  <details open>
   <summary>Initialize Firebase</summary>
 
 ## Initialize Firebase app:
@@ -194,7 +194,7 @@ const storage = getStorage(app);
 
 Authentication is a process of verifying the identity of a user. Firebase Authentication provides backend services, easy-to-use SDKs, and ready-made UI libraries to authenticate users to your app.
 
-<details>
+<details open>
 <summary>Setup</summary>
 
 ## Setup Firebase Authentication:
@@ -220,7 +220,7 @@ const auth = getAuth(app);
 
 </details>
 
-<details>
+<details open>
 <summary>Sign Up, In and Out</summary>
 
 ## Sign Up, In and Out:
@@ -276,7 +276,7 @@ signOut(auth)
 
 </details>
 
-<details>
+<details open>
 <summary>Sign In with Providers</summary>
 
 ## Sign In with Providers:
@@ -354,7 +354,7 @@ signInWithPhoneNumber(auth, phoneNumber, appVerifier)
 
 </details>
 
-<details>
+<details open>
 <summary>Auth State</summary>
 
 ## Auth State:
@@ -377,7 +377,7 @@ onAuthStateChanged(auth, (user) => {
 
 </details>
 
-<details>
+<details open>
 <summary>More Auth Functions</summary>
 
 ## More Auth Functions:
@@ -489,7 +489,7 @@ signOut(auth)
 
 </details>
 
-<details>
+<details open>
 <summary>Handling Errors</summary>
 
 ## Handling Authentication Errors:
@@ -522,7 +522,7 @@ signOut(auth)
 
 </details>
 
-<details>
+<details open>
 <summary>Keep learning</summary>
 
 ## Keep learning:
@@ -539,7 +539,7 @@ Firestore is a NoSQL database that stores data in documents and collections. It 
 
 [What is the defference between Firestore and Realtime Database?](https://firebase.google.com/docs/firestore/rtdb-vs-firestore)
 
-<details>
+<details open>
 <summary>Setup</summary>
 
 ## Setup Firestore:
@@ -568,7 +568,7 @@ const db = getFirestore(app);
 
 </details>
 
-<details>
+<details open>
 <summary>References</summary>
 
 ## References:
@@ -601,7 +601,7 @@ Go to [Queries Section](#query-methods) to see all query methods.
 
 </details>
 
-<details>
+<details open>
 <summary>Write Data</summary>
 
 ## Write Data: includes `create`, `update`, `delete`
@@ -658,7 +658,7 @@ await deleteDoc(doc(db, "users", auth.currentUser.uid));
 
 </details>
 
-<details>
+<details open>
 <summary>Read Data</summary>
 
 ## Read Data: includes `get`, `list`
@@ -695,7 +695,7 @@ querySnapshot.forEach((doc) => {
 
 </details>
 
-<details>
+<details open>
 <summary>Get Realtime Updates</summary>
 
 ## Get Realtime Updates
@@ -729,7 +729,7 @@ To stop listening to the document, call the `unsubscribe()` function returned by
 
 </details>
 
-<details>
+<details open>
 <summary>Query Methods</summary>
 
 ## Query Methods
@@ -787,7 +787,7 @@ querySnapshot.forEach((doc) => {
 
 </details>
 
-<details>
+<details open>
 <summary>Transactions</summary>
 
 ## Transactions
@@ -810,7 +810,7 @@ runTransaction(async (transaction) => {
 
 </details>
 
-<details>
+<details open>
 <summary>Batched Writes</summary>
 
 ## Batched Writes
@@ -829,7 +829,7 @@ await batch.commit();
 
 </details>
 
-<details>
+<details open>
 <summary>Security Rules</summary>
 
 ## Security Rules
@@ -898,7 +898,7 @@ service cloud.firestore {
 
 </details>
 
-<details>
+<details open>
 <summary>pricing</summary>
 
 ## Pricing
@@ -909,7 +909,7 @@ Firestore is free for the first 1GB of storage and 50,000 reads and writes per d
 
 </details>
 
-<details>
+<details open>
 <summary>Handling Errors</summary>
 
 ## Handling Firestore Errors
@@ -935,7 +935,7 @@ Firestore is free for the first 1GB of storage and 50,000 reads and writes per d
 
 </details>
 
-<details>
+<details open>
 <summary>Keep learning</summary>
 
 ## Keep learning
@@ -948,7 +948,7 @@ Firestore is free for the first 1GB of storage and 50,000 reads and writes per d
 
 # Storage:
 
-<details>
+<details open>
 <summary>Setup</summary>
 
 ## Get Started:
@@ -979,7 +979,7 @@ const storage = getStorage(app);
 
 </details>
 
-<details>
+<details open>
 <summary>File Reeference</summary>
 
 ## File Reference:
@@ -992,7 +992,7 @@ const storageRef = ref(storage, "images/image.jpg");
 
 </details>
 
-<details>
+<details open>
 <summary>Upload</summary>
 
 ## Upload:
@@ -1048,7 +1048,7 @@ uploadTask.on(
 
 </details>
 
-<details>
+<details open>
 <summary>Download</summary>
 
 ## Download:
@@ -1083,7 +1083,7 @@ getString(storageRef).then((result) => {
 
 </details>
 
-<details>
+<details open>
 <summary>File Metadata</summary>
 
 ## File Metadata:
@@ -1116,7 +1116,7 @@ updateMetadata(storageRef, {
 
 </details>
 
-<details>
+<details open>
 <summary>File Deletion</summary>
 
 ## File Deletion:
@@ -1134,7 +1134,7 @@ deleteObject(storageRef).then(() => {
 
 </details>
 
-<details>
+<details open>
 <summary>File List</summary>
 
 ## File List:
@@ -1154,7 +1154,7 @@ listAll(storageRef).then((result) => {
 
 </details>
 
-<details>
+<details open>
 <summary>File Data</summary>
 
 ## File Data:
@@ -1176,7 +1176,7 @@ listAll(storageRef).then((result) => {
 
 </details>
 
-<details>
+<details open>
 <summary>Handling Errors</summary>
 
 ## Handling Storage Errors:
@@ -1192,7 +1192,7 @@ The error is the parameter of the `catch` callback function.
 
 </details>
 
-<details>
+<details open>
 <summary>Keep learning</summary>
 
 ## Keep learning:
@@ -1209,7 +1209,7 @@ Realtime Database is a cloud-hosted database. Data is stored as JSON and synchro
 
 [What is the defference between Firestore and Realtime Database?](https://firebase.google.com/docs/firestore/rtdb-vs-firestore)
 
-<details>
+<details open>
 <summary>Setup</summary>
 
 ## Setup Realtime Database:
@@ -1242,7 +1242,7 @@ const db = getDatabase(app);
 
 </details>
 
-<details>
+<details open>
 <summary>CRUD</summary>
 
 ## CRUD:
@@ -1301,7 +1301,7 @@ remove(dbRef);
 
 </details>
 
-<details>
+<details open>
 <summary>Realtime Data</summary>
 
 ## Get Realtime Data:
@@ -1318,7 +1318,7 @@ onValue(dbRef, (snapshot) => {
 
 </details>
 
-<details>
+<details open>
 <summary>Security and Vailidation</summary>
 
 ## Security and Validation:
@@ -1327,7 +1327,7 @@ onValue(dbRef, (snapshot) => {
 
 </details>
 
-<details>
+<details open>
 <summary>Pricing</summary>
 
 ## Pricing:
@@ -1336,7 +1336,7 @@ onValue(dbRef, (snapshot) => {
 
 </details>
 
-<details>
+<details open>
 <summary>Handling Errors</summary>
 
 ## Handling Realtime Database Errors:
@@ -1348,7 +1348,7 @@ onValue(dbRef, (snapshot) => {
 
 </details>
 
-<details>
+<details open>
 <summary>Keep learning</summary>
 
 ## Keep learning:
@@ -1363,7 +1363,7 @@ onValue(dbRef, (snapshot) => {
 
 Firebase Hosting is a fast and secure way to serve static and dynamic content to your users.
 
-<details>
+<details open>
 <summary>Setup</summary>
 
 ## Get Started:
@@ -1394,7 +1394,7 @@ const functions = getFunctions(app);
 
 </details>
 
-<details>
+<details open>
 <summary>Deploy</summary>
 
 ## Deploy:
@@ -1427,7 +1427,7 @@ firebase deploy
 
 </details>
 
-<details>
+<details open>
 <summary>Keep learning</summary>
 
 ## Keep learning:
