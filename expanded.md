@@ -9,6 +9,8 @@ These docs target the Firebase JavaScript SDK, but you can use the same concepts
 
 It target Firebase v9.
 
+# [Collapse all sections](README.md)
+
 <details open>
 <summary>Notes</summary>
 
@@ -32,7 +34,7 @@ I am not a native English speaker, so if you find any mistakes, please feel free
 
 ## Table of Contents:
 
-**NOTE:** This links will not work while sections below are collapsed.
+**NOTE:** This links will not work while sections below are collapsed. If you prefer [Collapse all sections](README.md)
 
 ### Get started:
 
