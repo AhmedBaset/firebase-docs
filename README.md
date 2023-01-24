@@ -400,10 +400,4 @@ Paid plans start at $0.18 per GB per month, and you only pay for what you use. Y
 </details>
 
 
-# Markdown functaionality to collapse and expand all sections
-
-<script src=script.js></script>
-
-<button onclick="collapseAll()">Collapse All</button>
-<button onclick="document.querySelectorAll('details').forEach(el => el.open = true)}">Collapse All</button>
-
+# Markdown 
